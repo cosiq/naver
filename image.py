@@ -18,7 +18,6 @@ for img in imgs:
 
 driver.close()
 
-
 if not os.path.isdir('./{}'.format(keyword)): os.mkdir('./{}'.format(keyword))
 
 for idx, link in enumerate(result):
