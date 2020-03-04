@@ -1,15 +1,21 @@
 import os, time
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from urllib.request import urlretrieve
 
-keyword = "KEYWORD"
+keyword = input("Enter the keyword: ")
 
 print("Connecting...")
-driver = webdriver.Chrome()
+driver = webdriver.Chrome('/Users/june/chromedriver')
 driver.implicitly_wait(30)
 
 url = "https://search.naver.com/search.naver?where=image&sm=tab_jum&query={}".format(keyword)
 driver.get(url)
+
+body = driver.find_elements_by_css_selector('body')
+for i in range(3):
+	body.send_keys(Keys.PAGE_DOWN)
+	time.sleep(1)
 
 imgs = driver.find_elements_by_css_selector('img._img')
 result = []
