@@ -6,7 +6,7 @@ from urllib.request import urlretrieve
 keyword = input("Enter the keyword: ")
 
 print("Connecting...")
-driver = webdriver.Chrome('/Users/june/chromedriver')
+driver = webdriver.Chrome()
 driver.implicitly_wait(30)
 
 url = "https://search.naver.com/search.naver?where=image&sm=tab_jum&query={}".format(keyword)
